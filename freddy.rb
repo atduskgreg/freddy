@@ -3,6 +3,8 @@ require 'sinatra'
 require 'open-uri'
 require 'timeout'
 
+set :run, false
+disable :reload
 
 get '/' do
   begin
@@ -20,4 +22,8 @@ get '/' do
   rescue Errno::ENOENT => e
     "#{params['callback']}({'error' : 'Problem requesting the json: #{e}'})"
   end
+end
+
+get '/about' do
+  "Freddy read more: http://github.com/stepchange/freddy/tree/master"
 end

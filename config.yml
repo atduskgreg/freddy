@@ -1,0 +1,12 @@
+---
+pid: /Users/mjfreshyfresh/projects/freddy/thin.pid
+log: /Users/mjfreshyfresh/projects/freddy/thin.log 
+rackup: /Users/mjfreshyfresh/projects/freddy/config.ru
+timeout: 30
+port: 45666
+max_conns: 10
+max_persistent_conns: 512
+environment: production
+address: 127.0.0.1
+servers: 1
+daemonize: true
