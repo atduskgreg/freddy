@@ -6,6 +6,8 @@ require 'timeout'
 set :run, false
 disable :reload
 
+TIME_OUT = 15
+
 get '/' do
   begin
     if !params['url'] || !params['callback']
@@ -13,17 +15,17 @@ get '/' do
     elsif params['url'].empty? || params['callback'].empty?
       "#{params['callback']}({'error' : 'Must include a value for both 'url' and 'callback' parameters.'})"
     else
-      Timeout::timeout(3) do 
+      Timeout::timeout(TIME_OUT) do 
         "#{params['callback']}(#{open(params['url']).read})"
       end      
     end
   rescue Timeout::Error
-    "#{params['callback']}({'error' : 'Requesting the json took too long. Time limit is 15 seconds.'})"
+    "#{params['callback']}({'error' : 'Requesting the json took too long. Time limit is #{TIME_OUT} seconds.'})"
   rescue Errno::ENOENT => e
     "#{params['callback']}({'error' : 'Problem requesting the json: #{e}'})"
   end
 end
 
 get '/about' do
-  "Freddy read more: http://github.com/stepchange/freddy/tree/master"
+  "Freddy the JSON Slasher! <a href='http://github.com/stepchange/freddy/tree/master'>Read more</a>"
 end

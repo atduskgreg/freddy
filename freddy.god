@@ -3,12 +3,12 @@
 # This is the actual config file used to keep the thin thinning along for XXX.rb
 # these ports are defined in config.yml
 
-SINATRA_ROOT = "/home/rails/apps/facemask"
-PORT_NUM = 45666
+NAME = 'freddy'
+SINATRA_ROOT = "/home/rails/apps/freddy"
 
-[PORT_NUM].each do |port|
+%w{4666}.each do |port|
   God.watch do |w|
-    w.name = "facemask-thin-#{port}"
+    w.name = "#{NAME}-thin-#{port}"
     w.interval = 30.seconds # default    
     w.start = "thin -C #{SINATRA_ROOT}/config.yml start"  
     w.stop = "thin -C #{SINATRA_ROOT}/config.yml stop"  

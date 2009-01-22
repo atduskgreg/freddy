@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 
-require 'freddy'
+require '/home/rails/apps/freddy/freddy.rb'
 run Sinatra::Application
 

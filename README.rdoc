@@ -16,7 +16,7 @@ If you do not provide both of the paramters or if the url given cannot be access
 
     myCallback({'error' : '<description of error>'})
 
-Note: Freddy just straight up GETs the url and spits back the result. So, if the result is an HD rip of Berlin Alexanderplatz, then your server will (un-)happily start pulling that down. Freddy implements a timeout on getting the JSON of 3 seconds. If requesting your JSON takes longer than that, Freddy will return an error message in the format described above.
+Note: Freddy just straight up GETs the url and spits back the result. So, if the result is an HD rip of Berlin Alexanderplatz, then your server will (un-)happily start pulling that down. Freddy implements a timeout on getting the JSON of 15 seconds. If requesting your JSON takes longer than that, Freddy will return an error message in the format described above.
 
 There is no security. If you run this, anyone who knows about your Freddy URL will be able to access it for their arbitrary use. Deploy with caution.
 

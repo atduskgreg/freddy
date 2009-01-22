@@ -1,9 +1,9 @@
 ---
-pid: /Users/mjfreshyfresh/projects/freddy/thin.pid
-log: /Users/mjfreshyfresh/projects/freddy/thin.log 
-rackup: /Users/mjfreshyfresh/projects/freddy/config.ru
+pid: /home/rails/apps/freddy/thin.pid
+log: /home/rails/apps/freddy/thin.log 
+rackup: /home/rails/apps/freddy/config.ru
 timeout: 30
-port: 45666
+port: 4666
 max_conns: 10
 max_persistent_conns: 512
 environment: production

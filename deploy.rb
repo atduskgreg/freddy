@@ -1,0 +1,1 @@
+`scp *.* rails@stepchangegroup.com:/home/rails/apps/freddy`
